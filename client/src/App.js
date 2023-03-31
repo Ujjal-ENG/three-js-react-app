@@ -1,10 +1,15 @@
 import React from 'react';
+import Home from './pages/Home';
+import Canvas from './canvas';
+import Customizer from './pages/Customizer';
 
 const App = () => {
     return (
-        <>
-            <h1 className="text-3xl">Hello</h1>
-        </>
+        <main className="app transition-all ease-in">
+            <Home />
+            <Canvas />
+            <Customizer />
+        </main>
     );
 };
 

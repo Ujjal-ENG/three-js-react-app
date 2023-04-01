@@ -1,7 +1,7 @@
 import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
-import dallheRoutes from "./routes/dalle.route.js";
+import dallheRoutes from "./routes/dalle.routes.js";
 
 dotenv.config();
 

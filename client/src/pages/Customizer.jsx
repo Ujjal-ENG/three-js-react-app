@@ -55,6 +55,15 @@ const Customizer = () => {
                 state.isLogoTexture = true;
                 state.isFullTexture = false;
         }
+
+        // after setting the state, activeFilterTab is updated
+
+        setActiveFilterTab((ps) => {
+            return {
+                ...ps,
+                [tabName]: !ps[tabName]
+            };
+        });
     };
     const readFile = (type) => {
         reader(file).then((result) => {

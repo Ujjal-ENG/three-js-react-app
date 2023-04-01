@@ -27,9 +27,22 @@ const Customizer = () => {
             case 'filepicker':
                 return <FilePicker file={file} setFile={setFile} readFile={readFile} />;
             case 'aipicker':
-                return <AIPicker />;
+                return <AIPicker promt={promt} setPromt={setPromt} generatingImg={generatingImg} handleSubmit={handleSubmit} />;
             default:
                 return null;
+        }
+    };
+
+    const handleSubmit = async (type) => {
+        if (!promt) return alert('Please enter a prompt');
+
+        try {
+            // call our backend to generate an ai image!!
+        } catch (error) {
+            alert(error);
+        } finally {
+            setGeneratingImg(false);
+            setActiveEditorTab('');
         }
     };
 
@@ -58,6 +71,7 @@ const Customizer = () => {
 
         // after setting the state, activeFilterTab is updated
 
+        console.log(tabName);
         setActiveFilterTab((ps) => {
             return {
                 ...ps,
@@ -65,6 +79,7 @@ const Customizer = () => {
             };
         });
     };
+
     const readFile = (type) => {
         reader(file).then((result) => {
             handleDecals(type, result);
